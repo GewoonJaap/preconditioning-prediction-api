@@ -6,6 +6,8 @@
     jobs:
       build:
         runs-on: ubuntu-latest
+        permissions:
+            packages: write
         steps:
           - name: Checkout code
             uses: actions/checkout@v2
@@ -23,6 +25,6 @@
               context: .
               file: ./Dockerfile
               push: true
-              tags: ghcr.io/gewoonjaap/gewoonjaap/preconditioning-prediction-api:latest
+              tags: ghcr.io/gewoonjaap/preconditioning-prediction-api:latest
               platforms: linux/amd64
     

@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy the requirements file to the container
 COPY src/requirements.txt .
 
+RUN apt-get update && apt-get install -y cmake ninja-build
+
 # Install the Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
